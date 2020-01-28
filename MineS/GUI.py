@@ -4,16 +4,20 @@ Created on Dec 21, 2019
 @author: TommyHessel
 '''
 
+import os
 # from tkinter import Button, Frame, Menu, PhotoImage, Tk
 from tkinter import *
-import os
+from tkinter.messagebox import *
 
 global ROWS, COLS, mineField, guiField, flagged, blanks, mineLoc, revealed
 # [ R0[c0, c1, c2],  R1[c0, c1, c2]... ]
 
+
+
 def controls():
-    print ("show")
-    return 0
+    ctrlstr = "1. Left-Click to reveal a tile\n2. Right-Click to flag a tile"
+
+    showinfo("Controls", ctrlstr)
 
 def restart():
     print ("restart")
