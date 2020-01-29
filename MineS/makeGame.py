@@ -25,6 +25,11 @@ class space:
 
 
 def adjDiag(point, mineField):
+    """
+    Purpose: Get all the locations and values adjacent and diagonal to a tile.
+    Return: A 2-tuple with [0] the locations list of (row,col) and [1]
+            the corresponding values.Lists are parallel.
+    """
     aroundLoc = []
     aroundVal = []
     rows = len(mineField)
@@ -57,8 +62,11 @@ def adjDiag(point, mineField):
 
 
 def numProx(tile, mineField):
+    """
+    Purpose: Counts the number of adjacent & diagonal mines to assign val to tile.
+    Return: An int denoting the number of mines in close proximity.
+    """
     proxCtr = adjDiag(tile, mineField)[1].count("M")
-
     return proxCtr
 
 
