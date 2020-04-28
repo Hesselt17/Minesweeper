@@ -8,4 +8,4 @@ Python version of the game minesweeper
 
 Here's a screenshot of the UI window:
 
-<img src="https://github.com/Hesselt17/Minesweeper/blob/master/MineS/pics/example.png" height="250" width="250">
+<img src="https://github.com/Hesselt17/Minesweeper/blob/master/MineS/pics/example.png" height="450" width="450">
