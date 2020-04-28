@@ -7,5 +7,4 @@ Python version of the game minesweeper
 3. Controls button available in the game window
 
 Here's a screenshot of the UI window:
-#![Minesweeper](/pics/example.png)
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Minesweeper](https://github.com/Hesselt17/Minesweeper/blob/master/MineS/pics/example.png)
