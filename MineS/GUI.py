@@ -23,12 +23,15 @@ def controls():
     showinfo("Controls", ctrlstr)
 
 def restart():
-    subprocess.Popen(
-        [sys.executable, os.path.abspath(sys.argv[0])],
-        cwd=os.path.dirname(os.path.abspath(sys.argv[0])),
-        creationflags=subprocess.CREATE_NEW_CONSOLE
-    )
-    root.destroy()
+    if os.name == "nt":
+        subprocess.Popen(
+            [sys.executable, os.path.abspath(sys.argv[0])],
+            cwd=os.path.dirname(os.path.abspath(sys.argv[0])),
+            creationflags=subprocess.CREATE_NEW_CONSOLE
+        )
+        root.destroy()
+    else:
+        os.execl(sys.executable, sys.executable, *sys.argv)
 
 root = Tk()
 root.title('Minesweeper')
