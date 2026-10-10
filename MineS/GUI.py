@@ -5,6 +5,9 @@ Created on Dec 21, 2019
 '''
 
 import os
+import sys
+import subprocess
+
 # from tkinter import Button, Frame, Menu, PhotoImage, Tk
 from tkinter import *
 from tkinter.messagebox import *
@@ -20,9 +23,15 @@ def controls():
     showinfo("Controls", ctrlstr)
 
 def restart():
-    print ("restart")
-    python = sys.executable
-    os.execl(python, python, *sys.argv)
+    if os.name == "nt":
+        subprocess.Popen(
+            [sys.executable, os.path.abspath(sys.argv[0])],
+            cwd=os.path.dirname(os.path.abspath(sys.argv[0])),
+            creationflags=subprocess.CREATE_NEW_CONSOLE
+        )
+        root.destroy()
+    else:
+        os.execl(sys.executable, sys.executable, *sys.argv)
 
 root = Tk()
 root.title('Minesweeper')
